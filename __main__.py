@@ -24,7 +24,9 @@ for x in range(10 ):
 start = time.time()
 
 for worker in range(20):
-    q.put(worker)
+    q.put(worker) # q.put() worker moves the item worker (Could be array of strings, but worker simply = x where X in (range(N), which is just an array of #'s 1-N)
+    # the queue is get()ing the worker from that queue, and doing exampleJob, that is how the worker variable is passed to the function, it travels through the queue
+    # the threader takes the item out of the queue and sends it to exampleJob()
     
 q.join()
 
